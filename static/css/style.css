@@ -1,0 +1,161 @@
+
+body {
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    margin-top: 2rem;
+}
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-h1 {
+    font-weight: bold;
+    font-size: 10rem;
+    color: #ffffff;
+    font-family: 'ELEGANT', sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.custom-p1 {
+    font-weight: bold;
+    font-size: 3rem;
+    color: #ffb1b1;
+    font-family: 'ELEGANT', sans-serif;
+    line-height: 1.6;
+    font-style: italic;
+    margin-top: 0;
+}
+
+.custom-p2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+/* Page Title */
+.container h1 {
+    font-size: 2.5rem;
+    color: #fbf6f6;
+}
+
+.jumbotron {
+    padding: 2rem 1rem;
+    border-radius: 10px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert-info {
+    text-align: center;
+}
+
+.table {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.table th {
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.table td {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.table-responsive {
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.btn {
+    margin: 0 5px;
+    color: #ffffff;
+    opacity: 1;
+}
+
+.btn-primary {
+    background-color: #120fc0;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+a.btn-success {
+    background-color: #00c851;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+a.btn-success:hover {
+    background-color: #007e33;
+}
+
+#chatbox {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: #333;
+}
+
+#query {
+    font-size: 1rem;
+}
+
+#sendButton {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+

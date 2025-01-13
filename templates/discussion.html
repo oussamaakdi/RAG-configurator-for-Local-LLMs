@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Chatbot{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Chatbot</h1>
+
+    <div 
+        id="chatbox" 
+        data-config-id="{{ config_id }}" 
+        class="border rounded bg-light p-3 mb-4" 
+        style="height: 300px; overflow-y: auto;">
+    </div>
+
+    <form id="chatForm" class="d-flex" onsubmit="return false;">
+        <input 
+            type="text" 
+            id="query" 
+            class="form-control me-2" 
+            placeholder="Type your question here..." 
+            required>
+        <button 
+            id="sendButton" 
+            type="submit" 
+            class="btn btn-primary">
+            Send
+        </button>
+    </form>
+</div>
+
+<script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+
+{% endblock %}

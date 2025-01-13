@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Configuration History{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Configuration History</h1>
+
+    {% if configs %}
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Retriever Model</th>
+                        <th>Top-K</th>
+                        <th>Approach</th>
+                        <th>LLM</th>
+                        <th>Evaluator Model</th>
+                        <th>Similarity Threshold</th>
+                        <th>Answer-Relevancy</th>
+                        <th>Context-Precision</th>
+                        <th>Faithfulness</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for config in configs %}
+                    <tr>
+                        <td>{{ config.id }}</td>
+                        <td>{{ config.config_name }}</td>
+                        <td>{{ config.rem }}</td>
+                        <td>{{ config.top_k }}</td>
+                        <td>{{ config.approach }}</td>
+                        <td>{{ config.llm }}</td>
+                        <td>{{ config.eem }}</td>
+                        <td>{{ config.similarity_threshold }}</td>
+                        <td>{{ config.answer_relevancy }}</td>
+                        <td>{{ config.context_precision  }}</td>
+                        <td>{{ config.faithfulness }}</td>
+                        <td>
+                            <form action="/configs/evaluate/{{ config.id }}" method="post" style="display:inline;">
+                                <button class="btn btn-primary btn-sm" title="Evaluate">Evaluate</button>
+                            </form>
+                            <form action="/chatbot/directe/discussion/{{ config.id }}" method="get" style="display:inline;">
+                                <button class="btn btn-success btn-sm" title="Use as Chatbot">Use</button>
+                            </form>
+                            <form action="/configs/{{ config.id }}" method="post" style="display:inline;">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?');" title="Delete">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div class="alert alert-info text-center">
+            No configurations found.
+        </div>
+    {% endif %}
+
+    <div class="text-center mt-4">
+        <a href="/configs/form" class="btn btn-success">
+            Add New Configuration
+        </a>
+    </div>
+</div>
+{% endblock %}

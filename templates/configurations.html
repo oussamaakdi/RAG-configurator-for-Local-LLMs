@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Build your own rag{% endblock %}
+
+{% block content %}
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="container mx-auto py-8">
+    <h1 class="text-2xl font-bold mb-6 text-center">Configuration Form</h1>
+    <form action="/configs/add" method="post" class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="config_name">configuration name</label>
+        <input
+          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+          type="text" id="config_name" name="config_name" placeholder="configuration name" required>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="rem">Retriever Chromadb Embedding Model</label>
+        <select
+          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+          id="rem" name="rem" required>
+          <option value="" disabled selected>Select a Sentence Transformer</option>
+          <option value="all-mpnet-base-v2">all-mpnet-base-v2</option>
+          <option value="multi-qa-mpnet-base-dot-v1">multi-qa-mpnet-base-dot-v1</option>
+          <option value="all-distilroberta-v1">all-distilroberta-v1</option>
+          <option value="all-MiniLM-L12-v2">all-MiniLM-L12-v2</option>
+          <option value="multi-qa-distilbert-cos-v1">multi-qa-distilbert-cos-v1</option>
+          <option value="all-MiniLM-L6-v2">all-MiniLM-L6-v2</option>
+          <option value="multi-qa-MiniLM-L6-cos-v1">multi-qa-MiniLM-L6-cos-v1</option>
+          <option value="paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</option>
+          <option value="paraphrase-albert-small-v2">paraphrase-albert-small-v2</option>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="top_k">Top-K</label>
+        <input
+          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+          type="number" id="top_k" name="top_k" placeholder="Top-k relevant context chunks" required>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="approach">Approche</label>
+        <select
+          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+          id="approach" name="approach" required>
+          <option value="" disabled selected>Select an approche</option>
+          <option value="ResponseToQuery">ResponseToQuery</option>
+          <option value="RefinementAnswering">RefinementAnswering</option>
+          <option value="FeedbackAnswering">FeedbackAnswering</option>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="llm">Set your Local LLM</label>
+        <select
+          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+          id="llm" name="llm" required>
+          <option value="" disabled selected>Make an LLM selection</option>
+          <option value="mistral-7b-instruct-v0.3">mistral-7b-instruct-v0.3</option>
+          <option value="llama-2-7b-chat-finetune-qa-meta">llama-2-7b-chat-finetune-qa-meta</option>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="eem">Evaluator Embedding Model</label>
+        <select
+          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+          id="eem" name="eem" required>
+          <option value="" disabled selected>Select a Sentence Transformer</option>
+          <option value="" disabled selected>Select a Sentence Transformer</option>
+          <option value="all-mpnet-base-v2">all-mpnet-base-v2</option>
+          <option value="multi-qa-mpnet-base-dot-v1">multi-qa-mpnet-base-dot-v1</option>
+          <option value="all-distilroberta-v1">all-distilroberta-v1</option>
+          <option value="all-MiniLM-L12-v2">all-MiniLM-L12-v2</option>
+          <option value="multi-qa-distilbert-cos-v1">multi-qa-distilbert-cos-v1</option>
+          <option value="all-MiniLM-L6-v2">all-MiniLM-L6-v2</option>
+          <option value="multi-qa-MiniLM-L6-cos-v1">multi-qa-MiniLM-L6-cos-v1</option>
+          <option value="paraphrase-multilingual-mpnet-base-v2">paraphrase-multilingual-mpnet-base-v2</option>
+          <option value="paraphrase-albert-small-v2">paraphrase-albert-small-v2</option>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="similarity_threshold">Similarity Threshold</label>
+        <input
+          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+          type="number" step="0.01" id="similarity_threshold" name="similarity_threshold" placeholder="Ex: 0.5" required>
+      </div>
+
+      <button
+        class="w-full bg-indigo-500 text-white text-sm font-bold py-2 px-4 rounded-md hover:bg-indigo-600 transition duration-300"
+        type="submit">Create!</button>
+    </form>
+  </div>
+
+{% endblock %}

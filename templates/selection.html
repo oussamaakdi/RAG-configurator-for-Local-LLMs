@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Choose a Configuration{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Choose a Configuration for the Chatbot</h1>
+    
+    <div class="card shadow p-4">
+        <form action="/chatbot/select" method="post">
+            <div class="mb-4">
+                <label for="config_id" class="form-label fw-bold">Available Configurations:</label>
+                <select name="config_id" id="config_id" class="form-select">
+                    {% for config in configs %}
+                        <option value="{{ config.id }}">{{ config.config_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="bi bi-arrow-right-circle"></i> Continue
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
