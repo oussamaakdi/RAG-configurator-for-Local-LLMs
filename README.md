@@ -127,18 +127,14 @@ Before running the application, you need to replace the default datasets in the 
 4. Ensure they follow the correct column formats mentioned above.
 
 
-### **8️⃣ Initialize the Database**
-```bash
-python create_db.py
-```
 
-### **9️⃣ Run the Application**
+### **8️⃣ Run the Application**
 ```bash
 python main.py
 ```
 
 ### **🔟 Access the Web Interface**
-Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
+Open [http://127.0.0.1:5000...](http://127.0.0.1:5000) in your browser.
 
 ---
 
