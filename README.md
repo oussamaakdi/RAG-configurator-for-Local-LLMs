@@ -105,12 +105,39 @@ Make sure the **URL matches the LM Studio API server**.
 python create_db.py
 ```
 
-### **7️⃣ Run the Application**
+### **7️⃣ Replace `Chunks.csv` and `testset.csv` with Your Data**
+Before running the application, you need to replace the default datasets in the **Rag** folder with your own.
+
+#### **File Descriptions:**
+- **`Chunks.csv`**: This file contains **preprocessed text chunks** that the retriever will use.
+- **`testset.csv`**: This file contains **test queries and their ground truth answers** for evaluation.
+
+#### **File Format Requirements:**
+- **`Chunks.csv`** should have at least one column:
+  - `"Content"` → Contains text chunks used by the retriever.
+  
+- **`testset.csv`** should contain:
+  - `"Question"` → Test queries used for evaluation.
+  - `"Ground Truth"` → Expected responses that will be compared with model outputs.
+
+#### **Steps to Replace These Files:**
+1. Navigate to the `Rag/` directory.
+2. Delete the existing `Chunks.csv` and `testset.csv`.
+3. Copy and paste your custom datasets into the folder.
+4. Ensure they follow the correct column formats mentioned above.
+
+
+### **8️⃣ Initialize the Database**
+```bash
+python create_db.py
+```
+
+### **9️⃣ Run the Application**
 ```bash
 python main.py
 ```
 
-### **8️⃣ Access the Web Interface**
+### **🔟 Access the Web Interface**
 Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
 ---
