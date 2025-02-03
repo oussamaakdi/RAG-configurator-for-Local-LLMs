@@ -96,7 +96,7 @@ echo "url=http://localhost:5001" > .env
 ```
 Alternatively, manually edit `.env`:
 ```env
-url=http://localhost:5001
+url= "http://localhost:5001..."
 ```
 Make sure the **URL matches the LM Studio API server**.
 
