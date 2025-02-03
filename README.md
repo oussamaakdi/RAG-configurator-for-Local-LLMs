@@ -39,10 +39,10 @@ The application allows:
 📂 RAG-configurator-for-Local-LLMs
 │── 📂 Rag/                  # Core logic (retriever, generator, evaluator)
 │── 📂 instance/             # SQLite database instance
-│── 📂 static/               # CSS, JS, and images
+│── 📂 static/               # CSS, JS
 │── 📂 templates/            # HTML templates
 │── .env                     # Environment variables (API keys, paths)
-│── .gitignore                # Ignored files (DB, cache, etc.)
+│── .gitignore                
 │── README.md                 # Project documentation
 │── create_db.py              # Script to initialize the database
 │── main.py                   # Flask application entry point
