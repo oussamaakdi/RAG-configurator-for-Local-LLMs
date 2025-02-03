@@ -133,7 +133,7 @@ Before running the application, you need to replace the default datasets in the 
 python main.py
 ```
 
-### **🔟 Access the Web Interface**
+### **9️⃣ Access the Web Interface**
 Open [http://127.0.0.1:5000...](http://127.0.0.1:5000) in your browser.
 
 ---
